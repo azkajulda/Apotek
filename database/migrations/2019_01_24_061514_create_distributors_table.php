@@ -22,7 +22,6 @@ class CreateDistributorsTable extends Migration
             $table->string('telepon');
             $table->string('no_rek');
             $table->string('Email');
-            $table->integer('jumlah_hutang');
             $table->timestamps();
         });
     }

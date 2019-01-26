@@ -26,15 +26,4 @@ class HomeController extends Controller
         return view('layouts.master');
     }
 
-    //Conroller Konsumen
-    public function konsumen()
-    {
-        return view('master.konsumen');
-    }
-    public function addKonsumen()
-    {
-        return view('master.addsKonsumen');
-    }
-
-
 }
