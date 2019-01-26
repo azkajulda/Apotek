@@ -39,6 +39,12 @@ Route::group(['prefix' => 'distributor', "middleware" => "auth"], function () {
 
 Route::group(['prefix' => 'produsen', "middleware" => "auth"], function () {
     Route::get('/', "ProdusenController@index")->name("produsen");
+    Route::get('/add', "ProdusenController@create")->name("add-produsen");
+    Route::post('/add', "ProdusenController@store")->name("store-produsen");
+    Route::get('/edit/{id}', "ProdusenController@edit")->name('edit-produsen');
+    Route::post('/update/{id}', "ProdusenController@update")->name("update-produsen");
+    Route::get('/delete/{id}', "ProdusenController@destroy")->name('delete-produsen');
+
 });
 
 
