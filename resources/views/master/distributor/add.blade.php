@@ -6,7 +6,7 @@
                 <li class="active"><a href="#">Master Data</a></li>
                 <li class="active"><a href="#">Data Apotek</a></li>
                 <li class="active"><a href="#">Data Distributor</a></li>
-                <li class="active">Add Distributor</li>
+                <li class="active">Tambah Distributor</li>
             </ol>
         </div>
     </div>

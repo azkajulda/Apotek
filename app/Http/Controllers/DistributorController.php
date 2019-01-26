@@ -23,7 +23,7 @@ class DistributorController extends Controller
     }
 
     private function checkDistributor($kode_distributor){
-        $distributor = distributor::where('kode_distributor', '=', $kode_distributor)->get();
+        $distributor = distributor::where('kode_distributor', '=', $kode_distributor)->get()->first();
         if(!empty($distributor)) {
             return true;
         }
@@ -100,5 +100,15 @@ class DistributorController extends Controller
             return redirect()->route('distributor')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
         return redirect()->route('distributor')->with('success', 'Data Telah Berhasil Diubah');
+    }
+
+    public function delete($id){
+        try {
+            $distributor = distributor::findOrFail($id);
+            $distributor->delete();
+            return redirect()->route('distributor')->with('delete', 'Data Distributor '.$distributor->nama_distributor.' berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('distributor')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
+        }
     }
 }
