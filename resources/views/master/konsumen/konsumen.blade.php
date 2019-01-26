@@ -25,9 +25,23 @@
                             <i class="fa fa-plus"></i> Tambah
                         </button>
                         </a>
+                        @if (session('alert'))
+                            <div class="alert alert-danger">
+                                {{ session('alert') }}
+                            </div>
+                        @elseif(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @elseif(session('delete'))
+                            <div class="alert alert-warning">
+                                {{ session('delete') }}
+                            </div>
+                        @endif
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Kode</th>
                                 <th>Nama</th>
                                 <th>Jenis</th>
@@ -41,18 +55,30 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <?php $i=1; foreach ($konsumen as $konsumens):?>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{$i}}</td>
+                                <td>{{$konsumens->kode_konsumen}}</td>
+                                <td>{{$konsumens->nama_konsumen}}</td>
+                                <td>{{$konsumens->type_konsumen}}</td>
+                                <td>{{$konsumens->alamat}}</td>
+                                <td>{{$konsumens->telepon}}</td>
+                                <td>{{$konsumens->jk}}</td>
+                                <td>{{$konsumens->tgl_lahir}}</td>
+                                <td>{{$konsumens->pekerjaan}}</td>
+                                <td>{{$konsumens->agama}}</td>
+                                <td>
+                                    <a href="{{url('konsumen/delete/'.$konsumens->id)}}">
+                                        <button class="btn btn-danger" style="width: 40px;"><i class="fa fa-trash"></i>
+                                        </button>
+                                    </a>
+                                    <a href="#">
+                                        <button class="btn btn-primary" style="width: 40px;"><i class="fa fa-pencil"></i>
+                                        </button>
+                                    </a>
+                                </td>
                             </tr>
+                            <?php $i++; endforeach ?>
                             </tbody>
                         </table>
                     </div>
