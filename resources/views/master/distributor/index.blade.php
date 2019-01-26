@@ -67,7 +67,7 @@
                                                 <span class="fa fa-pencil"></span>
                                             </button>
                                         </a>
-                                        <a href="">
+                                        <a href="{{ route('delete-distributor', $distributor->id) }}">
                                             <button type="button" class="btn btn-danger">
                                                 <span class="fa fa-trash"></span>
                                             </button>

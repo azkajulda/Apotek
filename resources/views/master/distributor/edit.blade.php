@@ -6,7 +6,7 @@
                 <li class="active"><a href="#">Master Data</a></li>
                 <li class="active"><a href="#">Data Apotek</a></li>
                 <li class="active"><a href="#">Data Distributor</a></li>
-                <li class="active">Add Distributor</li>
+                <li class="active">Edit Distributor</li>
             </ol>
         </div>
     </div>
@@ -17,7 +17,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Tambah</strong> Data Distributor
+                            <strong>Edit</strong> Data Distributor
                         </div>
                         <div class="card-body card-block">
                             @if (session('alert'))
