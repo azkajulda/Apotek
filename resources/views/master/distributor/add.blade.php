@@ -13,22 +13,24 @@
 @endsection
 @section('oontent')
     <div class="content mt-3">
-        <div class="animated fadeIn">
-
-
-            <div class="row">
+        <div class="animated fadeIn"> <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
                             <strong>Tambah</strong> Data Distributor
                         </div>
                         <div class="card-body card-block">
+                            @if (!empty($error))
+                                <div class="alert alert-danger">
+                                    <strong>{{ $error }}</strong>
+                                </div>
+                            @endif
                             <form action="{{ route('store-distributor') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kode Distributor</label></div>
                                     <div class="col-6 col-md-3">
-                                        <input type="number" id="text-input" name="distributor_code" placeholder="" class="form-control"><small class="form-text text-muted">*Contoh : D102</small>
+                                        <input type="text" id="text-input" name="distributor_code" placeholder="" class="form-control"><small class="form-text text-muted">*Contoh : D102</small>
                                         @if ($errors->has('distributor_code'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('distributor_code') }}</p>
                                         @endif
@@ -73,7 +75,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">No Rekening</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="number" id="distributor_account" name="text-input" placeholder="" class="form-control">
+                                        <input type="number" id="distributor_account" name="distributor_account" placeholder="" class="form-control">
                                         @if ($errors->has('distributor_account'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('distributor_account') }}</p>
                                         @endif

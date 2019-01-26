@@ -30,6 +30,9 @@ Route::group(['prefix' => 'distributor'], function () {
     Route::get('/','DistributorController@index')->name('distributor');
     Route::get('/add', 'DistributorController@add')->name('add-distributor');
     Route::post('/add', 'DistributorController@store')->name('store-distributor');
+
+    Route::get('/edit/{id}', "DistributorController@edit")->name("edit-distributor");
+    Route::post('/update/{id}', "DistributorController@update")->name('update-distributor');
 });
 
 
