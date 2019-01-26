@@ -16,8 +16,8 @@ class CreateKonsumensTable extends Migration
         Schema::create('konsumens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kode_konsumen')->unique();
+            $table->string('nama_konsumen');
             $table->string('type_konsumen');
-            $table->string('name');
             $table->string('alamat');
             $table->string('telepon');
             $table->string('jk');

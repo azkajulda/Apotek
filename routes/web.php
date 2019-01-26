@@ -12,11 +12,18 @@
 */
 
 Route::get('/', function () {
-    return redirect('master');
+    return redirect('home');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/master', 'HomeController@master')->name('master');
+//Master Data
+Route::group(['prefix'=>'konsumen'],function (){
+    Route::get('/', 'HomeController@konsumen')->name('konsumen');
+    Route::get('/add', 'HomeController@addKonsumen')->name('addKonsumen');
+    Route::get('/upload', 'HomeController@uploadKonsumen')->name('uploadKonsumen');
+});
+
+

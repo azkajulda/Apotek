@@ -23,12 +23,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('layouts.master');
     }
 
-    public function master()
+    //Conroller Konsumen
+    public function konsumen()
     {
-        return view('layouts.master');
+        return view('master.konsumen');
+    }
+    public function addKonsumen()
+    {
+        return view('master.addsKonsumen');
     }
 
 
