@@ -26,4 +26,10 @@ Route::group(['prefix'=>'konsumen'],function (){
     Route::get('/upload', 'HomeController@uploadKonsumen')->name('uploadKonsumen');
 });
 
+Route::group(['prefix' => 'distributor'], function () {
+    Route::get('/','DistributorController@index')->name('distributor');
+    Route::get('/add', 'DistributorController@add')->name('add-distributor');
+    Route::post('/add', 'DistributorController@store')->name('store-distributor');
+});
+
 
