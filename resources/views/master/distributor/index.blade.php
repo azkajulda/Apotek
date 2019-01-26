@@ -25,6 +25,19 @@
                             <i class="fa fa-plus"></i> Tambah
                         </button>
                         </a>
+                        @if (session('alert'))
+                            <div class="alert alert-danger">
+                                {{ session('alert') }}
+                            </div>
+                        @elseif(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @elseif(session('delete'))
+                            <div class="alert alert-warning">
+                                {{ session('delete') }}
+                            </div>
+                        @endif
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
@@ -40,14 +53,27 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                @foreach ($distributors as $distributor)
+                                    <td>{{ $distributor->kode_distributor }}</td>
+                                    <td>{{ $distributor->nama_distributor }}</td>
+                                    <td>{{ $distributor->alamat }}</td>
+                                    <td>{{ $distributor->kota }}</td>
+                                    <td>{{ $distributor->telepon }}</td>
+                                    <td>{{ $distributor->no_rek }}</td>
+                                    <td>{{ $distributor->Email }}</td>
+                                    <td>
+                                        <a href="{{ route('edit-distributor', $distributor->id) }}">
+                                            <button type="button" class="btn btn-primary">
+                                                <span class="fa fa-pencil"></span>
+                                            </button>
+                                        </a>
+                                        <a href="">
+                                            <button type="button" class="btn btn-danger">
+                                                <span class="fa fa-trash"></span>
+                                            </button>
+                                        </a>
+                                    </td>
+                                @endforeach
                             </tr>
                             </tbody>
                         </table>
