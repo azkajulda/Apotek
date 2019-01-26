@@ -22,6 +22,14 @@ class DistributorController extends Controller
         return view($this->view["add"]);
     }
 
+    private function checkDistributor($kode_distributor){
+        $distributor = distributor::where('kode_distributor', '=', $kode_distributor)->get();
+        if(!empty($distributor)) {
+            return true;
+        }
+        return false;
+    }
+
     public function store(Request $request) {
         $validator = $request->validate([
             "distributor_code" => "required",
@@ -33,6 +41,10 @@ class DistributorController extends Controller
             "distributor_email" => "required"
         ]);
         try {
+            $check = $this->checkDistributor($request->input('distributor_code'));
+            if($check) {
+                return redirect()->route('distributor')->with('alert', "Kode Distributor yang anda masukan sudah tersedia, mohon isi dengan kode distributor yang lainnya.");
+            }
             $distributor = new distributor;
             $distributor->kode_distributor = $request->input('distributor_code');
             $distributor->nama_distributor = $request->input('distributor_name');
@@ -42,12 +54,10 @@ class DistributorController extends Controller
             $distributor->no_rek = $request->input('distributor_account');
             $distributor->Email = $request->input('distributor_email');
             $distributor->save();
-
-            return redirect()->route('distributor');
         } catch (\Exception $e) {
-            $data["error"] = $e->getMessage();
-            return view($this->view["add"], $data);
+            return redirect()->route('distributor')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
+        return redirect()->route('distributor')->with('success', 'Data Telah Masuk');
     }
 
     public function edit($id){
@@ -72,6 +82,10 @@ class DistributorController extends Controller
             "distributor_email" => "required"
         ]);
         try {
+            $check = $this->checkDistributor($request->input('distributor_code'));
+            if($check) {
+                return redirect()->route('distributor')->with('alert', "Kode Distributor yang anda masukan sudah tersedia, mohon isi dengan kode distributor yang lainnya.");
+            }
             $distributor = distributor::findOrFail($id);
             $distributor->kode_distributor = $request->input('distributor_code');
             $distributor->nama_distributor = $request->input('distributor_name');
@@ -82,10 +96,9 @@ class DistributorController extends Controller
             $distributor->Email = $request->input('distributor_email');
             $distributor->save();
 
-            return redirect()->route('distributor');
         } catch (\Exception $e) {
-            $data["error"] = $e->getMessage();
-            return view($this->view["add"], $data);
+            return redirect()->route('distributor')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
+        return redirect()->route('distributor')->with('success', 'Data Telah Berhasil Diubah');
     }
 }

@@ -20,9 +20,17 @@
                             <strong>Tambah</strong> Data Distributor
                         </div>
                         <div class="card-body card-block">
-                            @if (!empty($error))
+                            @if (session('alert'))
                                 <div class="alert alert-danger">
-                                    <strong>{{ $error }}</strong>
+                                    {{ session('alert') }}
+                                </div>
+                            @elseif(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @elseif(session('delete'))
+                                <div class="alert alert-warning">
+                                    {{ session('delete') }}
                                 </div>
                             @endif
                             @foreach ($distributors as $distributor)

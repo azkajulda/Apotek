@@ -25,6 +25,19 @@
                             <i class="fa fa-plus"></i> Tambah
                         </button>
                         </a>
+                        @if (session('alert'))
+                            <div class="alert alert-danger">
+                                {{ session('alert') }}
+                            </div>
+                        @elseif(session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @elseif(session('delete'))
+                            <div class="alert alert-warning">
+                                {{ session('delete') }}
+                            </div>
+                        @endif
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
