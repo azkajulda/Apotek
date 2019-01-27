@@ -52,8 +52,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                @foreach ($distributors as $distributor)
+                            @foreach ($distributors as $distributor)
+                                <tr>
                                     <td>{{ $distributor->kode_distributor }}</td>
                                     <td>{{ $distributor->nama_distributor }}</td>
                                     <td>{{ $distributor->alamat }}</td>
@@ -73,8 +73,8 @@
                                             </button>
                                         </a>
                                     </td>
-                                @endforeach
-                            </tr>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

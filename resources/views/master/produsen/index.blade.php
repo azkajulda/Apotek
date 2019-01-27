@@ -49,8 +49,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                @foreach ($produsens as $produsen)
+                            @foreach ($produsens as $produsen)
+                                <tr>
                                     <td>{{ $produsen->nama_pabrik }}</td>
                                     <td>{{ $produsen->alamat }}</td>
                                     <td>{{ $produsen->kota }}</td>
@@ -67,8 +67,8 @@
                                             </button>
                                         </a>
                                     </td>
-                                @endforeach
-                            </tr>
+                                    </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

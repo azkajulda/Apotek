@@ -47,4 +47,13 @@ Route::group(['prefix' => 'produsen', "middleware" => "auth"], function () {
 
 });
 
+Route::group(['prefix' => 'medicine', "middleware" => "auth"], function () {
+    Route::get('/', "MedicineController@index")->name('medicine');
+    Route::get('/add', "MedicineController@create")->name('add-medicine');
+    Route::post('/add', "MedicineController@store")->name('store-medicine');
+    Route::get('/edit/{id}', "MedicineController@edit")->name('edit-medicine');
+    Route::post('/update/{id}', "MedicineController@update")->name('update-medicine');
+    Route::get('/delete/{id}', "MedicineController@destroy")->name('delete-medicine');
+});
+
 

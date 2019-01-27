@@ -15,6 +15,7 @@ class DistributorController extends Controller
     ];
     public function index(){
         $data["distributors"] = distributor::all();
+        // dd($data["distributors"]);
         return view($this->view["index"], $data);
     }
 
