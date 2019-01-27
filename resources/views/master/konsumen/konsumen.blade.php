@@ -72,7 +72,7 @@
                                         <button class="btn btn-danger" style="width: 40px;"><i class="fa fa-trash"></i>
                                         </button>
                                     </a>
-                                    <a href="#">
+                                    <a href="{{route('editKonsumen',$konsumens->id)}}">
                                         <button class="btn btn-primary" style="width: 40px;"><i class="fa fa-pencil"></i>
                                         </button>
                                     </a>

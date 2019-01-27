@@ -25,13 +25,14 @@ Route::group(['prefix'=>'konsumen'],function (){
     Route::get('/add', 'KonsumenController@addKonsumen')->name('addKonsumen');
     Route::post('/upload', 'KonsumenController@uploadKonsumen')->name('uploadKonsumen');
     Route::get('/delete/{id}', 'KonsumenController@delete')->name('deleteKonsumen');
+    Route::get('/edit/{id}', 'KonsumenController@get_data_konsumen')->name('editKonsumen');
+    Route::post('/update/{id}', 'KonsumenController@updateKonsumen')->name('updateKonsumen');
 });
 
 Route::group(['prefix' => 'distributor', "middleware" => "auth"], function () {
     Route::get('/','DistributorController@index')->name('distributor');
     Route::get('/add', 'DistributorController@add')->name('add-distributor');
     Route::post('/add', 'DistributorController@store')->name('store-distributor');
-
     Route::get('/edit/{id}', "DistributorController@edit")->name("edit-distributor");
     Route::post('/update/{id}', "DistributorController@update")->name('update-distributor');
     Route::get('/delete/{id}', "DistributorController@delete")->name("delete-distributor");
