@@ -34,12 +34,12 @@
                                     {{ session('delete') }}
                                 </div>
                             @endif
-                            <form action="{{ route('store-medicine') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{ route('update-medicine', $medicines->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kode Obat</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="medicine_code" placeholder="" class="form-control"><small class="form-text text-muted">*Contoh : O102</small>
+                                        <input type="text" id="text-input" name="medicine_code" placeholder="" class="form-control" value="{{ $medicines->kode_obat }}"><small class="form-text text-muted">*Contoh : O102</small>
                                         @if ($errors->has('medicine_code'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_code') }}</p>
                                         @endif
@@ -51,7 +51,7 @@
                                         <select name="medicine_produsen" id="medicine_produsen" class="form-control">
                                             <option value="">&mdash;Pilih Produsen&mdash;</option>
                                             @foreach ($producens as $producen)
-                                                <option value="{{ $producen->id }}">{{ $producen->nama_pabrik }}</option>
+                                                <option value="{{ $producen->id }}" {{ ($medicines->id_produsen == $producen->id) ? "selected" : "" }}>{{ $producen->nama_pabrik }}</option>
                                             @endforeach
                                         </select>
                                         @if ($errors->has('medicine_produsen'))
@@ -62,7 +62,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Obat</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="text" id="text-input" name="medicine_name" placeholder="" class="form-control">
+                                        <input type="text" id="text-input" name="medicine_name" placeholder="" class="form-control" value="{{ $medicines->nama_obat }}">
                                         @if ($errors->has('medicine_name'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_name') }}</p>
                                         @endif
@@ -74,7 +74,7 @@
                                         <select name="medicine_category" id="medicine_category" class="form-control">
                                             <option value="">&mdash;Pilih Kategori&mdash;</option>
                                             @foreach ($medicine_categories as $category)
-                                                <option value="{{ $category["name"] }}">{{ $category["name"] }}</option>
+                                                <option value="{{ $category["name"] }}" {{ ($medicines->kategori == $category["name"]) ? "selected" : "" }}>{{ $category["name"] }}</option>
                                             @endforeach
                                         </select>
                                         @if ($errors->has('medicine_category'))
@@ -88,7 +88,7 @@
                                         <select name="medicine_type" id="medicine_type" class="form-control">
                                             <option value="">&mdash;Pilih Jenis Obat&mdash;</option>
                                             @foreach ($medicine_type as $type)
-                                                <option value="{{ $type["name"] }}">{{ $type["name"] }}</option>
+                                                <option value="{{ $type["name"] }}" {{ ($medicines->jenis_obat == $type["name"]) ? "selected" : "" }}>{{ $type["name"] }}</option>
                                             @endforeach
                                         </select>
                                         @if ($errors->has('medicine_type'))
@@ -99,7 +99,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tgl Kadaluarsa</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="date" id="text-input" name="medicine_ex" placeholder="" class="form-control">
+                                        <input type="date" id="text-input" name="medicine_ex" placeholder="" class="form-control" value="{{ $medicines->tgl_kadaluarsa }}">
                                         @if ($errors->has('medicine_ex'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_ex') }}</p>
                                         @endif
@@ -108,7 +108,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Harga Beli</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="number" id="text-input" name="medicine_buy_price" placeholder="" class="form-control">
+                                        <input type="number" id="text-input" name="medicine_buy_price" placeholder="" class="form-control" value="{{ $medicines->harga_beli }}">
                                         @if ($errors->has('medicine_buy_price'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_buy_price') }}</p>
                                         @endif
@@ -117,7 +117,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Harga Jual</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="number" id="text-input" name="medicine_sell_price" placeholder="" class="form-control">
+                                        <input type="number" id="text-input" name="medicine_sell_price" placeholder="" class="form-control" value="{{ $medicines->harga_jual }}">
                                         @if ($errors->has('medicine_sell_price'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_sell_price') }}</p>
                                         @endif
@@ -126,7 +126,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Stok</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="number" id="text-input" name="medicine_stock" placeholder="" class="form-control">
+                                        <input type="number" id="text-input" name="medicine_stock" placeholder="" class="form-control" value="{{ $medicines->stok }}">
                                         @if ($errors->has('medicine_stock'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_stock') }}</p>
                                         @endif

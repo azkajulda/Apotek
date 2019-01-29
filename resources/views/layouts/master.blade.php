@@ -54,7 +54,7 @@
                         <li><i class="fa fa-table"></i><a href="{{route('konsumen')}}">Data Konsumen</a></li>
                         <li><i class="fa fa-table"></i><a href="{{ route('distributor') }}">Data Distributor</a></li>
                         <li><i class="fa fa-table"></i><a href="{{ route('produsen') }}">Data Produsen</a></li>
-                        <li><i class="fa fa-table"></i><a href="">Data Obat</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{ route('medicine') }}">Data Obat</a></li>
                         <li><i class="fa fa-table"></i><a href="">Data Karyawan</a></li>
                         <li><i class="fa fa-table"></i><a href="">Data Dokter</a></li>
                     </ul>

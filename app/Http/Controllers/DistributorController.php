@@ -23,12 +23,16 @@ class DistributorController extends Controller
         return view($this->view["add"]);
     }
 
-    private function checkDistributor($kode_distributor){
+    private function checkDistributor($kode_distributor, $id){
         $distributor = distributor::where('kode_distributor', '=', $kode_distributor)->get()->first();
-        if(!empty($distributor)) {
+        if (!empty($distributor)) {
+            if ($distributor->id != $id) {
+                return true;
+            }
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
 
     public function store(Request $request) {
@@ -83,7 +87,7 @@ class DistributorController extends Controller
             "distributor_email" => "required"
         ]);
         try {
-            $check = $this->checkDistributor($request->input('distributor_code'));
+            $check = $this->checkDistributor($request->input('distributor_code'), $id);
             if($check) {
                 return redirect()->route('distributor')->with('alert', "Kode Distributor yang anda masukan sudah tersedia, mohon isi dengan kode distributor yang lainnya.");
             }

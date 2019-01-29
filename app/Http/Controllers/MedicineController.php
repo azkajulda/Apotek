@@ -156,7 +156,6 @@ class MedicineController extends Controller
 
             $medicine->save();
         } catch (\Exception $e) {
-            dd($e->getMessage());
             return redirect()->route('medicine')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
         return redirect()->route('medicine')->with('success', 'Data Telah Masuk');
@@ -183,7 +182,11 @@ class MedicineController extends Controller
     {
         //
         $medicine = obat::findOrFail($id);
+        $producens = produsen::all();
         $data["medicines"] = $medicine;
+        $data["producens"] = $producens;
+        $data["medicine_categories"] = $this->medicine_categories;
+        $data["medicine_type"] = $this->medicine_type;
         return view($this->view["edit"], $data);
     }
 
@@ -197,6 +200,39 @@ class MedicineController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validator = $request->validate([
+            "medicine_code" => "required",
+            "medicine_produsen" => "required",
+            "medicine_name" => "required",
+            "medicine_category" => "required",
+            "medicine_type" => "required",
+            "medicine_ex" => "required",
+            "medicine_buy_price" => "required",
+            "medicine_sell_price" => "required",
+            "medicine_stock" => "required" 
+
+        ]);
+        try {
+            $check = $this->checkMedicine($request->input("medicine_code"), $id);
+            if ($check) {
+                return redirect()->route('medicine')->with('alert', "Kode Obat yang anda masukan sudah tersedia, mohon isi dengan kode obat yang lainnya.");
+            }
+            $medicine = obat::findOrFail($id);
+            $medicine->kode_obat = $request->input("medicine_code");
+            $medicine->id_produsen = $request->input("medicine_produsen");
+            $medicine->nama_obat = $request->input("medicine_name");
+            $medicine->kategori = $request->input("medicine_category");
+            $medicine->jenis_obat = $request->input("medicine_type");
+            $medicine->tgl_kadaluarsa = $request->input("medicine_ex");
+            $medicine->harga_beli = $request->input("medicine_buy_price");
+            $medicine->harga_jual = $request->input("medicine_sell_price");
+            $medicine->stok = $request->input("medicine_stock");
+
+            $medicine->save();
+        } catch (\Exception $e) {
+            return redirect()->route('medicine')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
+        }
+        return redirect()->route('medicine')->with('success', 'Data Telah Masuk');
     }
 
     /**
@@ -207,14 +243,24 @@ class MedicineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $medicine = obat::findOrFail($id);
+            $medicine->delete();
+            return redirect()->route('medicine')->with('delete', 'Data Distributor '.$medicine->nama_obat.' berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('medicine')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
+        }
     }
 
-    private function checkMedicine($medicine_code){
+    private function checkMedicine($medicine_code, $id = 0){
         $medicine = obat::where('kode_obat', "=", $medicine_code)->get()->first();
         if (!empty($medicine)) {
+            if ($medicine->id != $id) {
+                return true;
+            }
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
 }
