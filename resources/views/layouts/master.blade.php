@@ -53,10 +53,11 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="{{route('konsumen')}}">Data Konsumen</a></li>
                         <li><i class="fa fa-table"></i><a href="{{ route('distributor') }}">Data Distributor</a></li>
-                        <li><i class="fa fa-table"></i><a href="">Data Produsen</a></li>
-                        <li><i class="fa fa-table"></i><a href="">Data Obat</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{ route('produsen') }}">Data Produsen</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{ route('medicine') }}">Data Obat</a></li>
                         <li><i class="fa fa-table"></i><a href="{{ route('karyawan') }}">Data Karyawan</a></li>
                         <li><i class="fa fa-table"></i><a href="{{ route('dokter') }}">Data Dokter</a></li>
+
                     </ul>
                 </li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Data Kas Apotek</a></li>

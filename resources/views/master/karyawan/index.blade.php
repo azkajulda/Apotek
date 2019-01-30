@@ -37,7 +37,7 @@
                                     {{ session('delete') }}
                                 </div>
                             @endif
-                            <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                            <table id="" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Kode</th>
@@ -66,6 +66,16 @@
                                 @endforeach
                                 </tbody>
                             </table>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <ul class="pagination">
+                                        <li>
+                                            {{$karyawan->links()}}
+                                        </li>
+                                    </ul>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

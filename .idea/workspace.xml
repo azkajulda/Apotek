@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28e030b8-3d6b-4e62-aab1-607c7dcfa727" name="Default Changelist" comment="Update Migration dan Model">
-      <change afterPath="$PROJECT_DIR$/resources/views/master/dokter/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/master/dokter/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/master/karyawan/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/master/karyawan/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MedicineController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/medicine/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/medicine/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/medicine/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/produsen/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/produsen/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/produsen/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DistributorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DistributorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProdusenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProdusenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/obat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/obat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/produsen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/produsen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master/distributor/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/distributor/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,70 +29,85 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="803603927">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="env" value="1" />
+          <entry key="php" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="1" />
+          <entry key="PHP" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Blade" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="63" column="150" lean-forward="true" selection-start-line="63" selection-start-column="150" selection-end-line="63" selection-end-column="150" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/add.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="39" column="52" selection-end-line="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="67" column="102" selection-start-line="67" selection-start-column="102" selection-end-line="67" selection-end-column="102" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DokterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
+            <state relative-caret-position="119">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding>
-                <element signature="e#40#55#0#PHP" expanded="true" />
+                <element signature="e#40#57#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="39" column="82" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MedicineController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="56" column="57" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="57" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="56" column="97" selection-start-line="56" selection-start-column="97" selection-end-line="56" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -176,19 +195,51 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" />
         <option value="$PROJECT_DIR$/resources/views/master/karyawan/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php" />
         <option value="$PROJECT_DIR$/resources/views/master/karyawan/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/dokter/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/dokter/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DokterController.php" />
         <option value="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
       </list>
     </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/public/admin/bower_components/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/animate.css/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/bootstrap/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/chart.js/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/chosen/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/flot/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/gaugejs/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/gmaps/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/jquery-validation-unobtrusive/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/jquery-validation/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/jqvmap/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/jszip/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/peity/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/babel-config/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/bundle/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/eslint-config-popper/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/popper/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/test-utils/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/test/package.json" />
+      <path value="$PROJECT_DIR$/public/vendors/popper.js/packages/tooltip/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -306,19 +357,6 @@
               <item name="Apotek" type="b2602c69:ProjectViewProjectNode" />
               <item name="Apotek" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Apotek" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Apotek" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Apotek" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Apotek" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Apotek" type="b2602c69:ProjectViewProjectNode" />
@@ -467,18 +505,19 @@
       <workItem from="1548423402918" duration="36000" />
       <workItem from="1548425156782" duration="6398000" />
       <workItem from="1548491810317" duration="7432000" />
-      <workItem from="1548515363129" duration="5570000" />
+      <workItem from="1548515363129" duration="10199000" />
+      <workItem from="1548813538532" duration="2081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85838000" />
+    <option name="totallyTimeSpent" value="92548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27836612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28290468" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -489,9 +528,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30441898" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30327868" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -502,14 +541,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/obat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -550,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070457_create_penjualans_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -585,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="7" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#header#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -621,15 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="280" column="8" selection-start-line="280" selection-start-column="8" selection-end-line="1073" selection-end-column="59" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -641,13 +653,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master/obat.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_061537_create_produsens_table.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -684,13 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070451_create_pembelians_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -754,40 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="61" column="11" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" selection-start-line="9" selection-end-line="70" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-            <element signature="e#138#279#0#PHP" />
-            <element signature="e#284#369#0#PHP" />
-            <element signature="e#375#1089#0#PHP" />
-            <element signature="e#1095#1328#0#PHP" />
-            <element signature="e#1334#2065#0#PHP" />
-            <element signature="e#2071#2232#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="58" column="80" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
         </state>
       </provider>
     </entry>
@@ -859,8 +827,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070451_create_pembelians_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="67" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070457_create_penjualans_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="39" column="82" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MedicineController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="56" column="97" selection-start-line="56" selection-start-column="97" selection-end-line="56" selection-end-column="97" />
         </state>
       </provider>
     </entry>

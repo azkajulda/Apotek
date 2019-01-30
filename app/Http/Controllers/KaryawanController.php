@@ -9,7 +9,7 @@ class KaryawanController extends Controller
 {
     public function karyawan()
     {
-        $karyawan = karyawan::all();
+        $karyawan = karyawan::paginate(10);
         return view('master.karyawan.index',compact('karyawan'));
     }
     public function addKaryawan()

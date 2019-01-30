@@ -4,8 +4,8 @@
         <div class="page-title">
             <ol class="breadcrumb text-right">
                 <li class="active"><a href="#">Master Data</a></li>
-                <li class="active"><a href="#">Data Distrbutor</a></li>
-                <li class="active">Data Distributor</li>
+                <li class="active"><a href="#">Data Produsen</a></li>
+                <li class="active">Data Produsen</li>
             </ol>
         </div>
     </div>
@@ -17,10 +17,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Data Distrbutor  </strong>
+                        <strong class="card-title">Data Produsen  </strong>
                     </div>
                     <div class="card-body">
-                        <a href="{{route('add-distributor')}}">
+                        <a href="{{route('add-produsen')}}">
                         <button class="btn btn-primary" style="margin-bottom: 15px;">
                             <i class="fa fa-plus"></i> Tambah
                         </button>
@@ -41,39 +41,33 @@
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
-                                <th>Kode</th>
-                                <th>Nama</th>
+                                <th>Nama Pabrik</th>
                                 <th>Alamat</th>
                                 <th>Kota</th>
                                 <th>Telepon</th>
-                                <th>No Rekening</th>
-                                <th>Email</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach ($distributors as $distributor)
+                            @foreach ($produsens as $produsen)
                                 <tr>
-                                    <td>{{ $distributor->kode_distributor }}</td>
-                                    <td>{{ $distributor->nama_distributor }}</td>
-                                    <td>{{ $distributor->alamat }}</td>
-                                    <td>{{ $distributor->kota }}</td>
-                                    <td>{{ $distributor->telepon }}</td>
-                                    <td>{{ $distributor->no_rek }}</td>
-                                    <td>{{ $distributor->Email }}</td>
+                                    <td>{{ $produsen->nama_pabrik }}</td>
+                                    <td>{{ $produsen->alamat }}</td>
+                                    <td>{{ $produsen->kota }}</td>
+                                    <td>{{ $produsen->telepon }}</td>
                                     <td>
-                                        <a href="{{ route('edit-distributor', $distributor->id) }}">
+                                        <a href="{{ route('edit-produsen', $produsen->id) }}">
                                             <button type="button" class="btn btn-primary">
                                                 <span class="fa fa-pencil"></span>
                                             </button>
                                         </a>
-                                        <a href="{{ route('delete-distributor', $distributor->id) }}">
+                                        <a href="{{ route('delete-produsen', $produsen->id) }}">
                                             <button type="button" class="btn btn-danger">
                                                 <span class="fa fa-trash"></span>
                                             </button>
                                         </a>
                                     </td>
-                                </tr>
+                                    </tr>
                             @endforeach
                             </tbody>
                         </table>
