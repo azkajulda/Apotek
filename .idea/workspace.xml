@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28e030b8-3d6b-4e62-aab1-607c7dcfa727" name="Default Changelist" comment="Update Migration dan Model">
+      <change afterPath="$PROJECT_DIR$/resources/views/master/dokter/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/dokter/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/karyawan/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/karyawan/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KonsumenController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KonsumenController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -22,20 +30,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138">
-              <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+            <state relative-caret-position="217">
+              <caret line="63" column="150" lean-forward="true" selection-start-line="63" selection-start-column="150" selection-end-line="63" selection-end-column="150" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/add.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            <state relative-caret-position="207">
+              <caret line="39" column="52" selection-end-line="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="67" column="102" selection-start-line="67" selection-start-column="102" selection-end-line="67" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DokterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
               <folding>
-                <element signature="e#3471#3491#0#HTML" expanded="true" />
-                <element signature="e#3770#3790#0#HTML" expanded="true" />
+                <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,57 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/edit.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/KonsumenController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="108" column="90" selection-start-line="108" selection-start-column="90" selection-end-line="108" selection-end-column="90" />
-              <caret line="109" column="82" selection-start-line="109" selection-start-column="82" selection-end-line="109" selection-end-column="82" />
-              <caret line="110" column="82" selection-start-line="110" selection-start-column="82" selection-end-line="110" selection-end-column="82" />
-              <caret line="111" column="90" selection-start-line="111" selection-start-column="90" selection-end-line="111" selection-end-column="90" />
-              <caret line="112" column="78" selection-start-line="112" selection-start-column="78" selection-end-line="112" selection-end-column="78" />
-              <folding>
-                <element signature="e#1721#1758#0#HTML" expanded="true" />
-                <element signature="e#2490#2527#0#HTML" expanded="true" />
-                <element signature="e#3080#3087#0#HTML" expanded="true" />
-                <element signature="e#3107#3114#0#HTML" expanded="true" />
-                <element signature="e#3525#3562#0#HTML" expanded="true" />
-                <element signature="e#4230#4267#0#HTML" expanded="true" />
-                <element signature="e#4987#5024#0#HTML" expanded="true" />
-                <element signature="e#5908#5933#0#HTML" expanded="true" />
-                <element signature="e#6285#6322#0#HTML" expanded="true" />
-                <element signature="e#6993#7030#0#HTML" expanded="true" />
-                <element signature="e#7702#7739#0#HTML" expanded="true" />
-                <element signature="e#8617#8624#0#HTML" expanded="true" />
-                <element signature="e#8635#8642#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="56" column="57" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -103,11 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>regis</find>
-      <find>form</find>
-      <find>left</find>
-      <find>user-ava</find>
-      <find>searc</find>
       <find>su</find>
       <find>dash</find>
       <find>right</find>
@@ -133,12 +122,18 @@
       <find>textarea</find>
       <find>inline rad</find>
       <find>konsumens</find>
+      <find>tel</find>
+      <find>telepo</find>
+      <find>konsumen</find>
+      <find>text</find>
+      <find>texta</find>
     </findStrings>
     <replaceStrings>
       <replace>(/)</replace>
       <replace>('/')</replace>
       <replace>username</replace>
       <replace>konsumen</replace>
+      <replace>karyawan</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -161,7 +156,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_01_24_061621_create_dokters_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_23_223531_create_obats_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_25_030520_create_pembelians_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_25_070507_create_return_pembelians_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_25_070451_create_pembelians_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_25_070457_create_penjualans_table.php" />
@@ -171,7 +165,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/../../Pendidikan/Materi Pembelajaran/WEB/Template/Dashboard/sufee-admin-dashboard-master/tables-data.html" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/addKonsumen.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_01_24_061514_create_distributors_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Konsumen.php" />
@@ -179,10 +172,21 @@
         <option value="$PROJECT_DIR$/resources/views/master/konsumen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/distributor/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/master/addsKonsumen.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/KonsumenController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/karyawan/add.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/karyawan/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/dokter/add.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/dokter/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DokterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php" />
       </list>
     </option>
   </component>
@@ -291,7 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,7 +374,15 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="master" type="462c0819:PsiDirectoryNode" />
-              <item name="distributor" type="462c0819:PsiDirectoryNode" />
+              <item name="dokter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Apotek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Apotek" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+              <item name="karyawan" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Apotek" type="b2602c69:ProjectViewProjectNode" />
@@ -390,6 +401,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,17 +467,18 @@
       <workItem from="1548423402918" duration="36000" />
       <workItem from="1548425156782" duration="6398000" />
       <workItem from="1548491810317" duration="7432000" />
+      <workItem from="1548515363129" duration="5570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76224000" />
+    <option name="totallyTimeSpent" value="85838000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27382752" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27836612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -478,85 +491,18 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.54664487" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30441898" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31467474" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.17348608" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="e#33#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Pendidikan/Materi Pembelajaran/WEB/Template/Login Form/colorlib-regform-7/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="103" column="38" lean-forward="true" selection-start-line="102" selection-end-line="103" selection-end-column="38" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#section#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Pendidikan/Materi Pembelajaran/WEB/Template/Dashboard/sufee-admin-dashboard-master/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-end-line="704" />
-          <folding>
-            <element signature="n#aside#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/fz3temp-2/.env" />
-    <entry file="file://$PROJECT_DIR$/../.env" />
-    <entry file="file://C:/Program Files (x86)/software-id/Apotek Pro/example.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -635,13 +581,6 @@
     <entry file="file://$PROJECT_DIR$/public/vendors/bootstrap/dist/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="147" selection-start-line="147" selection-end-line="147" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Pendidikan/Materi Pembelajaran/WEB/Template/Dashboard/sufee-admin-dashboard-master/tables-data.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -691,34 +630,6 @@
             <element signature="n#div#4;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#5;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_061604_create_karyawans_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_061621_create_dokters_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070451_create_pembelians_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -776,92 +687,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/add.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070451_create_pembelians_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="210" lean-forward="true" selection-start-line="37" selection-start-column="210" selection-end-line="37" selection-end-column="210" />
-          <folding>
-            <element signature="e#1674#1711#0#HTML" expanded="true" />
-            <element signature="e#2503#2540#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
-          <folding>
-            <element signature="e#3471#3491#0#HTML" expanded="true" />
-            <element signature="e#3770#3790#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="36" column="62" selection-start-line="36" selection-start-column="62" selection-end-line="36" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="108" column="90" selection-start-line="108" selection-start-column="90" selection-end-line="108" selection-end-column="90" />
-          <caret line="109" column="82" selection-start-line="109" selection-start-column="82" selection-end-line="109" selection-end-column="82" />
-          <caret line="110" column="82" selection-start-line="110" selection-start-column="82" selection-end-line="110" selection-end-column="82" />
-          <caret line="111" column="90" selection-start-line="111" selection-start-column="90" selection-end-line="111" selection-end-column="90" />
-          <caret line="112" column="78" selection-start-line="112" selection-start-column="78" selection-end-line="112" selection-end-column="78" />
-          <folding>
-            <element signature="e#1721#1758#0#HTML" expanded="true" />
-            <element signature="e#2490#2527#0#HTML" expanded="true" />
-            <element signature="e#3080#3087#0#HTML" expanded="true" />
-            <element signature="e#3107#3114#0#HTML" expanded="true" />
-            <element signature="e#3525#3562#0#HTML" expanded="true" />
-            <element signature="e#4230#4267#0#HTML" expanded="true" />
-            <element signature="e#4987#5024#0#HTML" expanded="true" />
-            <element signature="e#5908#5933#0#HTML" expanded="true" />
-            <element signature="e#6285#6322#0#HTML" expanded="true" />
-            <element signature="e#6993#7030#0#HTML" expanded="true" />
-            <element signature="e#7702#7739#0#HTML" expanded="true" />
-            <element signature="e#8617#8624#0#HTML" expanded="true" />
-            <element signature="e#8635#8642#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/KonsumenController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="80" column="47" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+        <state relative-caret-position="153">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="92" selection-end-column="5" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
+            <element signature="e#138#282#0#PHP" />
+            <element signature="e#287#381#0#PHP" />
+            <element signature="e#387#1602#0#PHP" />
+            <element signature="e#1608#1841#0#PHP" />
+            <element signature="e#1847#3079#0#PHP" />
+            <element signature="e#3085#3257#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="29" column="41" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_25_070339_create_obats_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/konsumen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" column="60" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_061604_create_karyawans_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="41" />
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="41" />
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/distributor/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/karyawan/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="61" column="11" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/KaryawanController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" selection-start-line="9" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#57#0#PHP" expanded="true" />
+            <element signature="e#138#279#0#PHP" />
+            <element signature="e#284#369#0#PHP" />
+            <element signature="e#375#1089#0#PHP" />
+            <element signature="e#1095#1328#0#PHP" />
+            <element signature="e#1334#2065#0#PHP" />
+            <element signature="e#2071#2232#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="58" column="80" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/karyawan/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="51" column="24" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/karyawan/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="76" column="22" lean-forward="true" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_01_24_061621_create_dokters_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="56" column="57" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="39" column="52" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/dokter/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="67" column="102" selection-start-line="67" selection-start-column="102" selection-end-line="67" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DokterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="71" selection-start-line="46" selection-start-column="71" selection-end-line="46" selection-end-column="71" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/addsKonsumen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="63" column="150" lean-forward="true" selection-start-line="63" selection-start-column="150" selection-end-line="63" selection-end-column="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/konsumen/updateKonsumen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
         </state>
       </provider>
     </entry>

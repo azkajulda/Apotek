@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Master Data
-Route::group(['prefix'=>'konsumen'],function (){
+Route::group(['prefix'=>'konsumen', "middleware" => "auth"],function (){
     Route::get('/', 'KonsumenController@konsumen')->name('konsumen');
     Route::get('/add', 'KonsumenController@addKonsumen')->name('addKonsumen');
     Route::post('/upload', 'KonsumenController@uploadKonsumen')->name('uploadKonsumen');
@@ -42,4 +42,20 @@ Route::group(['prefix' => 'produsen', "middleware" => "auth"], function () {
     Route::get('/', "ProdusenController@index")->name("produsen");
 });
 
+Route::group(['prefix'=>'karyawan', "middleware" => "auth"],function (){
+    Route::get('/', 'KaryawanController@karyawan')->name('karyawan');
+    Route::get('/add', 'KaryawanController@addKaryawan')->name('addKaryawan');
+    Route::post('/upload', 'KaryawanController@uploadKaryawan')->name('uploadKaryawan');
+    Route::get('/delete/{id}', 'KaryawanController@delete')->name('deleteKaryawan');
+    Route::get('/edit/{id}', 'KaryawanController@get_data_karywan')->name('editKaryawan');
+    Route::post('/update/{id}', 'KaryawanController@updateKaryawan')->name('updateKaryawan');
+});
 
+Route::group(['prefix'=>'dokter', "middleware" => "auth"],function (){
+    Route::get('/', 'DokterController@dokter')->name('dokter');
+    Route::get('/add', 'DokterController@addDokter')->name('addDokter');
+    Route::post('/upload', 'DokterController@uploadDokter')->name('uploadDokter');
+    Route::get('/delete/{id}', 'DokterController@delete')->name('deleteDokter');
+    Route::get('/edit/{id}', 'DokterController@get_data_dokter')->name('editDokter');
+    Route::post('/update/{id}', 'DokterController@updateDokter')->name('updateDokter');
+});

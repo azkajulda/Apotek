@@ -6,7 +6,7 @@
                 <li class="active"><a href="#">Master Data</a></li>
                 <li class="active"><a href="#">Data Apotek</a></li>
                 <li class="active"><a href="#">Data Konsumen</a></li>
-                <li class="active">Add Konsumen</li>
+                <li class="active">Update Konsumen</li>
             </ol>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Tambah</strong> Data Konsumen
+                            <strong>Update</strong> Data Konsumen
                         </div>
                         <div class="card-body card-block">
                             <form action="{{route('updateKonsumen',$konsumen->id)}}" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Telepon</label></div>
-                                    <div class="col-12 col-md-3"><input type="number" id="telepon" name="telepon" placeholder="" class="form-control" value="{{$konsumen->telepon}}"><small class="form-text text-muted">*Contoh : P102</small>
+                                    <div class="col-12 col-md-3"><input type="number" id="telepon" name="telepon" placeholder="" class="form-control" value="{{$konsumen->telepon}}">
                                         @if ($errors->has('telepon'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('telepon') }}</p>
                                         @endif

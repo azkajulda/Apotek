@@ -61,9 +61,9 @@
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Telepon</label></div>
-                                    <div class="col-12 col-md-3"><input type="number" id="telepon" name="telepon" placeholder="" class="form-control"><small class="form-text text-muted">*Contoh : P102</small>
+                                    <div class="col-12 col-md-3"><input type="number" id="telepon" name="telepon" placeholder="" class="form-control">
                                         @if ($errors->has('telepon'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('telepon') }}</p>
+                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('telepon')}}</p>
                                         @endif
                                     </div>
                                 </div>

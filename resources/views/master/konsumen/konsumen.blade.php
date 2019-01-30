@@ -41,7 +41,6 @@
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
-                                <th>No</th>
                                 <th>Kode</th>
                                 <th>Nama</th>
                                 <th>Jenis</th>
@@ -55,9 +54,8 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <?php $i=1; foreach ($konsumen as $konsumens):?>
+                            @foreach($konsumen as $konsumens)
                             <tr>
-                                <td>{{$i}}</td>
                                 <td>{{$konsumens->kode_konsumen}}</td>
                                 <td>{{$konsumens->nama_konsumen}}</td>
                                 <td>{{$konsumens->type_konsumen}}</td>
@@ -78,7 +76,7 @@
                                     </a>
                                 </td>
                             </tr>
-                            <?php $i++; endforeach ?>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

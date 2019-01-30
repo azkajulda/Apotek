@@ -21,7 +21,7 @@ class CreateObatsTable extends Migration
             $table->string('nama_obat');
             $table->string('kategori');
             $table->string('jenis_obat');
-            $table->string('tgl_kadaluarsa');
+            $table->date('tgl_kadaluarsa');
             $table->integer('harga_beli');
             $table->integer('harga_jual');
             $table->integer('stok');
