@@ -213,7 +213,7 @@ class MedicineController extends Controller
 
         ]);
         try {
-            $check = $this->checkMedicine($request->input("medicine_code"), $id);
+            $check = $this->checkMedicine($request->input("medicine_code"), (int)$id);
             if ($check) {
                 return redirect()->route('medicine')->with('alert', "Kode Obat yang anda masukan sudah tersedia, mohon isi dengan kode obat yang lainnya.");
             }
@@ -255,8 +255,8 @@ class MedicineController extends Controller
     private function checkMedicine($medicine_code, $id = 0){
         $medicine = obat::where('kode_obat', "=", $medicine_code)->get()->first();
         if (!empty($medicine)) {
-            if ($medicine->id != $id) {
-                return true;
+            if ($medicine->id == $id) {
+                return false;
             }
             return true;
         }else{
