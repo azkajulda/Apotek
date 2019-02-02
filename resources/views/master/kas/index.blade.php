@@ -23,7 +23,8 @@
                                 <button class="btn btn-primary" style="margin-bottom: 15px;">
                                     <i class="fa fa-plus"></i> Tambah
                                 </button>
-                                <p style="font-weight: bold; font-size: 20px; margin-left: 80%">{{$sum}}</p>
+                                <p style="font-weight: bold; font-size: 20px; margin-left: 80%">Jumlah Kas Apotek {{' Rp.'.number_format($sum,2)}}</p>
+                                <br>
                             </a>
                             @if (session('alert'))
                                 <div class="alert alert-danger">
@@ -52,7 +53,7 @@
                                     <tr>
                                         <td>{{$kass->tanggal}}</td>
                                         <td>{{$kass->keterangan}}</td>
-                                        <td>{{$kass->nominal}}</td>
+                                        <td>{{' Rp.'.number_format($kass->nominal,2)}}</td>
                                         <td>
                                             <a href="{{route('deleteKas',$kass->id)}}}">
                                                 <button class="btn btn-danger" style="width: 40px;"><i class="fa fa-trash"></i>
