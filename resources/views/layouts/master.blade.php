@@ -60,7 +60,7 @@
 
                     </ul>
                 </li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-money"></i>Data Kas Apotek</a></li>
+                <li><a href="{{route('kas')}}"> <i class="menu-icon fa fa-money"></i>Data Kas Apotek</a></li>
 
                 <h3 class="menu-title">Transaksi</h3>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Pembelian Obat</a></li>
@@ -141,7 +141,7 @@
             @yield('header')
         </div>
     </div>
-    @yield('oontent')
+    @yield('content')
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->

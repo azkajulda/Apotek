@@ -10,7 +10,7 @@
         </div>
     </div>
 @endsection
-@section('oontent')
+@section('content')
    <div class="content mt-3">
     <div class="animated fadeIn">
         <div class="row">
