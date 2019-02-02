@@ -107,7 +107,7 @@
             <div class="col-sm-5">
                 <div class="user-area dropdown float-right">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>, Logout
+                            {{--{{ Auth::user()->name }} <span class="caret"></span>, Logout--}}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

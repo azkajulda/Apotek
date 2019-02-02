@@ -20,7 +20,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Master Data
-Route::group(['prefix'=>'konsumen', "middleware" => "auth"],function (){
+
+Route::group(['middleware' => 'auth'], function () {
+Route::group(['prefix' => 'konsumen'], function () {
     Route::get('/', 'KonsumenController@konsumen')->name('konsumen');
     Route::get('/add', 'KonsumenController@addKonsumen')->name('addKonsumen');
     Route::post('/upload', 'KonsumenController@uploadKonsumen')->name('uploadKonsumen');
@@ -29,8 +31,8 @@ Route::group(['prefix'=>'konsumen', "middleware" => "auth"],function (){
     Route::post('/update/{id}', 'KonsumenController@updateKonsumen')->name('updateKonsumen');
 });
 
-Route::group(['prefix' => 'distributor', "middleware" => "auth"], function () {
-    Route::get('/','DistributorController@index')->name('distributor');
+Route::group(['prefix' => 'distributor'], function () {
+    Route::get('/', 'DistributorController@index')->name('distributor');
     Route::get('/add', 'DistributorController@add')->name('add-distributor');
     Route::post('/add', 'DistributorController@store')->name('store-distributor');
     Route::get('/edit/{id}', "DistributorController@edit")->name("edit-distributor");
@@ -38,7 +40,7 @@ Route::group(['prefix' => 'distributor', "middleware" => "auth"], function () {
     Route::get('/delete/{id}', "DistributorController@delete")->name("delete-distributor");
 });
 
-Route::group(['prefix' => 'produsen', "middleware" => "auth"], function () {
+Route::group(['prefix' => 'produsen'], function () {
     Route::get('/', "ProdusenController@index")->name("produsen");
     Route::get('/add', "ProdusenController@create")->name("add-produsen");
     Route::post('/add', "ProdusenController@store")->name("store-produsen");
@@ -48,7 +50,7 @@ Route::group(['prefix' => 'produsen', "middleware" => "auth"], function () {
 
 });
 
-Route::group(['prefix' => 'medicine', "middleware" => "auth"], function () {
+Route::group(['prefix' => 'medicine'], function () {
     Route::get('/', "MedicineController@index")->name('medicine');
     Route::get('/add', "MedicineController@create")->name('add-medicine');
     Route::post('/add', "MedicineController@store")->name('store-medicine');
@@ -57,7 +59,7 @@ Route::group(['prefix' => 'medicine', "middleware" => "auth"], function () {
     Route::get('/delete/{id}', "MedicineController@destroy")->name('delete-medicine');
 });
 
-Route::group(['prefix'=>'karyawan', "middleware" => "auth"],function (){
+Route::group(['prefix' => 'karyawan'], function () {
     Route::get('/', 'KaryawanController@karyawan')->name('karyawan');
     Route::get('/add', 'KaryawanController@addKaryawan')->name('addKaryawan');
     Route::post('/upload', 'KaryawanController@uploadKaryawan')->name('uploadKaryawan');
@@ -66,11 +68,12 @@ Route::group(['prefix'=>'karyawan', "middleware" => "auth"],function (){
     Route::post('/update/{id}', 'KaryawanController@updateKaryawan')->name('updateKaryawan');
 });
 
-Route::group(['prefix'=>'dokter', "middleware" => "auth"],function (){
+Route::group(['prefix' => 'dokter'], function () {
     Route::get('/', 'DokterController@dokter')->name('dokter');
     Route::get('/add', 'DokterController@addDokter')->name('addDokter');
     Route::post('/upload', 'DokterController@uploadDokter')->name('uploadDokter');
     Route::get('/delete/{id}', 'DokterController@delete')->name('deleteDokter');
     Route::get('/edit/{id}', 'DokterController@get_data_dokter')->name('editDokter');
     Route::post('/update/{id}', 'DokterController@updateDokter')->name('updateDokter');
+});
 });
