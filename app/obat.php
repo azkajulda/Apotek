@@ -16,6 +16,11 @@ class obat extends Model
         return $this->hasMany('App\pembelians', 'id_obat');
     }
 
+    public function obat_sell()
+    {
+        return $this->hasMany('App\penjualan', 'id_obat');
+    }
+
     protected $fillable = [
         "kode_obat", "id_produsen", "nama_obat", "kategori", "jenis_obat", "tgl_kadaluarsa", "harga_beli", "harga_jual", "stok"
     ];

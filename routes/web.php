@@ -86,6 +86,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/delete/{id}', "PurchaseController@destroy")->name('delete-purchase');
     });
 
+    Route::group(['prefix' => 'sell'], function () {
+        Route::get('/', "SellController@index")->name('sell');
+        Route::get('/add', "SellController@create")->name('add-sell');
+        Route::post('/add', "SellController@store")->name('store-sell');
+        Route::get('/edit/{id}', "SellController@edit")->name('edit-sell');
+        Route::post('/update/{id}', "SellController@update")->name('update-sell');
+        Route::get('/delete/{id}', "SellController@destroy")->name('delete-sell');
+    });
+
     Route::group(['prefix' => 'kas'], function () {
         Route::get('/', 'KasController@kas')->name('kas');
         Route::get('/add', 'KasController@addKas')->name('addKas');

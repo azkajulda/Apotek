@@ -86,7 +86,6 @@ class PurchaseController extends Controller
                 $kas->nominal = "-".$price;
                 $kas->save();
             } catch (\Exception $e) {
-                dd($e->getMessage());
                 DB::rollBack();
                 return redirect()->route('purchase')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
             }
@@ -170,7 +169,7 @@ class PurchaseController extends Controller
                 return redirect()->route('purchase')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
             }
             DB::commit();
-            return redirect()->route('purchase')->with('success', 'Data Telah Masuk');
+            return redirect()->route('purchase')->with('success', 'Data Telah Berhasil Diubah');
         } catch (\Exception $e) {
             return redirect()->route('purchase')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
