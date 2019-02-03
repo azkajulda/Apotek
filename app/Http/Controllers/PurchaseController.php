@@ -80,11 +80,13 @@ class PurchaseController extends Controller
                 $selected_medicine->save();
 
                 $kas = new kas;
+                $kas->id_pembelian = $purchase->id;
                 $kas->tanggal = $request->input("purchase_date");
                 $kas->keterangan = "Pembelian Obat ".$selected_medicine->nama_obat." Sebanyak ".$request->input("purchase_qty");
                 $kas->nominal = "-".$price;
                 $kas->save();
             } catch (\Exception $e) {
+                dd($e->getMessage());
                 DB::rollBack();
                 return redirect()->route('purchase')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
             }
@@ -158,7 +160,7 @@ class PurchaseController extends Controller
                 $selected_medicine->stok = $stock;
                 $selected_medicine->save();
 
-                $kas = new kas;
+                $kas = kas::where("id_pembelian", "=", $id)->get()->first();
                 $kas->tanggal = $request->input("purchase_date");
                 $kas->keterangan = "Pembelian Obat ".$selected_medicine->nama_obat." Sebanyak ".$request->input("purchase_qty");
                 $kas->nominal = "-".$price;

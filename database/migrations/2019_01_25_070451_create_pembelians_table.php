@@ -19,8 +19,6 @@ class CreatePembeliansTable extends Migration
             $table->foreign('id_obat')->references('id')->on('obats')->onDelete('cascade');
             $table->unsignedInteger('id_distributor');
             $table->foreign('id_distributor')->references('id')->on('distributors')->onDelete('cascade');
-            $table->unsignedInteger('id_kas');
-            $table->foreign('id_kas')->references('id')->on('kas')->onDelete('cascade');
             $table->date('tanggal_pembelian');
             $table->integer('qty');
             $table->timestamps();

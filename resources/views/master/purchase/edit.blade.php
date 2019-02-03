@@ -34,7 +34,7 @@
                                     {{ session('delete') }}
                                 </div>
                             @endif
-                            <form action="{{ route('store-purchase') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{ route('update-purchase', $purchase->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Obat</label></div>

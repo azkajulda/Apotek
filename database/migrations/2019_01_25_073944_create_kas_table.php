@@ -15,6 +15,10 @@ class CreateKasTable extends Migration
     {
         Schema::create('kas', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('id_pembelian')->nullable();
+            $table->foreign('id_pembelian')->references('id')->on('pembelians')->onDelete('cascade');
+            $table->unsignedInteger('id_penjualan');
+            $table->foreign('id_penjualan')->references('id')->on('penjualans')->onDelete('cascade');
             $table->date('tanggal');
             $table->string('keterangan');
             $table->integer('nominal');
