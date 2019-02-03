@@ -77,6 +77,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/update/{id}', 'DokterController@updateDokter')->name('updateDokter');
     });
 
+    Route::group(['prefix' => 'purchase'], function () {
+        Route::get('/', "PurchaseController@index")->name('purchase');
+        Route::get('/add', "PurchaseController@create")->name('add-purchase');
+        Route::post('/add', "PurchaseController@store")->name('store-purchase');
+        Route::get('/edit/{id}', "PurchaseController@edit")->name('edit-purchase');
+        Route::post('/update/{id}', "PurchaseController@update")->name('update-purchase');
+        Route::get('/delete/{id}', "PurchaseController@destroy")->name('delete-purchase');
+    });
+
     Route::group(['prefix' => 'kas'], function () {
         Route::get('/', 'KasController@kas')->name('kas');
         Route::get('/add', 'KasController@addKas')->name('addKas');
