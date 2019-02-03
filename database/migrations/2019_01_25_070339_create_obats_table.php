@@ -17,7 +17,7 @@ class CreateObatsTable extends Migration
             $table->increments('id');
             $table->string('kode_obat')->unique();
             $table->unsignedInteger('id_produsen');
-            $table->foreign('id_produsen')->references('id')->on('produsens');
+            $table->foreign('id_produsen')->references('id')->on('produsens')->onDelete('cascade');
             $table->string('nama_obat');
             $table->string('kategori');
             $table->string('jenis_obat');

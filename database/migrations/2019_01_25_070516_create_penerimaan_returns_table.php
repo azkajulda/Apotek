@@ -16,9 +16,9 @@ class CreatePenerimaanReturnsTable extends Migration
         Schema::create('penerimaan_returns', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_obat');
-            $table->foreign('id_obat')->references('id')->on('obats');
+            $table->foreign('id_obat')->references('id')->on('obats')->onDelete('cascade');
             $table->unsignedInteger('id_distributor');
-            $table->foreign('id_distributor')->references('id')->on('distributors');
+            $table->foreign('id_distributor')->references('id')->on('distributors')->onDelete('cascade');
             $table->date('tanggal_penerimaan');
             $table->integer('qty');
             $table->timestamps();
