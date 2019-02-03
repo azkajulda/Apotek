@@ -63,7 +63,7 @@
                 <li><a href="{{route('kas')}}"> <i class="menu-icon fa fa-money"></i>Data Kas Apotek</a></li>
 
                 <h3 class="menu-title">Transaksi</h3>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Pembelian Obat</a></li>
+                <li><a href="{{route('purchase')}}"> <i class="menu-icon fa fa-tasks"></i>Pembelian Obat</a></li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Jual Obat</a></li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Return Pembelian Obat</a></li>
                 <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Terima Return Obat</a></li>

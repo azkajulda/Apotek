@@ -21,8 +21,6 @@ class CreatePenjualansTable extends Migration
             $table->foreign('id_konsumen')->references('id')->on('konsumens')->onDelete('cascade');
             $table->unsignedInteger('id_dokter');
             $table->foreign('id_dokter')->references('id')->on('dokters')->onDelete('cascade');
-            $table->unsignedInteger('id_kas');
-            $table->foreign('id_kas')->references('id')->on('kas')->onDelete('cascade');
             $table->date('tanggal_penjualan');
             $table->integer('qty');
             $table->timestamps();
