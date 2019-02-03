@@ -5,8 +5,8 @@
             <ol class="breadcrumb text-right">
                 <li class="active"><a href="#">Master Data</a></li>
                 <li class="active"><a href="#">Data Apotek</a></li>
-                <li class="active"><a href="#">Data Produsen</a></li>
-                <li class="active">Tambah Produsen</li>
+                <li class="active"><a href="#">Data Kas</a></li>
+                <li class="active">Tambah Kas</li>
             </ol>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Tambah</strong> Data Produsen
+                            <strong>Tambah</strong> Data Kas Apotek
                         </div>
                         <div class="card-body card-block">
                             @if (session('alert'))
@@ -34,32 +34,32 @@
                                     {{ session('delete') }}
                                 </div>
                             @endif
-                            <form action="{{ route('update-produsen', $produsens->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="{{ route('uploadKas') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
                                 @csrf
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Pabrik</label></div>
-                                    <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="produsen_name" placeholder="" class="form-control" value="{{ $produsens->nama_pabrik }}"><small class="form-text text-muted">*Contoh : PT.Medion Farma Jaya</small>
-                                        @if ($errors->has('produsen_name'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('produsen_name') }}</p>
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tanggal</label></div>
+                                    <div class="col-6 col-md-3">
+                                        <input type="date" id="text-input" name="tanggal" placeholder="" class="form-control"><small class="form-text text-muted"></small>
+                                        @if ($errors->has('tanggal'))
+                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('tanggal') }}</p>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Alamat</label></div>
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Keterangan</label></div>
                                     <div class="col-12 col-md-9">
-                                        <textarea name="produsen_address" id="textarea-input" rows="3" placeholder="" class="form-control">{{ $produsens->alamat }}</textarea>
-                                        @if ($errors->has('produsen_address'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('produsen_address') }}</p>
+                                        <input type="text" id="text-input" name="keterangan" placeholder="" class="form-control"><small class="form-text text-muted"></small>
+                                        @if ($errors->has('keterangan'))
+                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('keterangan') }}</p>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">No Telepon</label></div>
-                                    <div class="col-12 col-md-3">
-                                        <input type="text" id="text-input" name="produsen_phone" placeholder="" class="form-control" value="{{ $produsens->telepon }}">
-                                        @if ($errors->has('produsen_phone'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('produsen_phone') }}</p>
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Total Nominal</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="number" id="text-input" name="nominal" placeholder="" class="form-control"><small class="form-text text-muted"></small>
+                                        @if ($errors->has('nominal'))
+                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('nominal') }}</p>
                                         @endif
                                     </div>
                                 </div>

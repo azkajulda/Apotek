@@ -6,7 +6,7 @@
                 <li class="active"><a href="#">Master Data</a></li>
                 <li class="active"><a href="#">Data Apotek</a></li>
                 <li class="active"><a href="#">Data Pembelian</a></li>
-                <li class="active">Tambah Pembelian</li>
+                <li class="active">Edit Pembelian</li>
             </ol>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Tambah</strong> Data Pembelian
+                            <strong>Edit</strong> Data Pembelian
                         </div>
                         <div class="card-body card-block">
                             @if (session('alert'))
@@ -42,7 +42,7 @@
                                         <select name="purchase_medicine" id="purchase_medicine" class="form-control">
                                             <option value="">&mdash;Pilih Obat&mdash;</option>
                                             @foreach ($medicines as $medicine)
-                                                <option value="{{ $medicine->id }}">{{ $medicine->nama_obat }}</option>
+                                                <option value="{{ $medicine->id }}" {{ ($purchase->id_obat == $medicine->id) ? "selected" : "" }}>{{ $medicine->nama_obat }}</option>
                                             @endforeach
                                         </select>
                                         @if ($errors->has('purchase_medicine'))
@@ -56,7 +56,7 @@
                                         <select name="purchase_distributor" id="purchase_distributor" class="form-control">
                                             <option value="">&mdash;Pilih Distributor&mdash;</option>
                                             @foreach ($distributors as $distributor)
-                                                <option value="{{ $distributor->id }}">{{ $distributor->nama_distributor }}</option>
+                                                <option value="{{ $distributor->id }}" {{ ($purchase->id_distributor == $distributor->id) ? "selected" : "" }}>{{ $distributor->nama_distributor }}</option>
                                             @endforeach
                                         </select>
                                         @if ($errors->has('purchase_distributor'))
@@ -67,7 +67,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tgl Pembelian</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="date" id="text-input" name="purchase_date" placeholder="" class="form-control">
+                                        <input type="date" id="text-input" name="purchase_date" placeholder="" class="form-control" value="{{ $purchase->tanggal_pembelian }}">
                                         @if ($errors->has('purchase_date'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('purchase_date') }}</p>
                                         @endif
@@ -76,7 +76,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kuantitas</label></div>
                                     <div class="col-12 col-md-3">
-                                        <input type="number" id="text-input" name="purchase_qty" placeholder="" class="form-control">
+                                        <input type="number" id="text-input" name="purchase_qty" placeholder="" class="form-control" value="{{ $purchase->qty }}">
                                         @if ($errors->has('purchase_qty'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('purchase_qty') }}</p>
                                         @endif

@@ -23,7 +23,7 @@ class DistributorController extends Controller
         return view($this->view["add"]);
     }
 
-    private function checkDistributor($kode_distributor, $id){
+    private function checkDistributor($kode_distributor, $id = 0){
         $distributor = distributor::where('kode_distributor', '=', $kode_distributor)->get()->first();
         if (!empty($distributor)) {
             if ($distributor->id == $id) {

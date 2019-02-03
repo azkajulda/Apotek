@@ -85,4 +85,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/update/{id}', "PurchaseController@update")->name('update-purchase');
         Route::get('/delete/{id}', "PurchaseController@destroy")->name('delete-purchase');
     });
+
+    Route::group(['prefix' => 'kas'], function () {
+        Route::get('/', 'KasController@kas')->name('kas');
+        Route::get('/add', 'KasController@addKas')->name('addKas');
+        Route::post('/upload', 'KasController@uploadKas')->name('uploadKas');
+        Route::get('/delete/{id}', 'KasController@delete')->name('deleteKas');
+        Route::get('/edit/{id}', 'KasController@get_data_kas')->name('editKas');
+        Route::post('/update/{id}', 'KasController@updateKas')->name('updateKas');
+    });
 });

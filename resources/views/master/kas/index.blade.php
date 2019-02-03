@@ -4,7 +4,7 @@
         <div class="page-title">
             <ol class="breadcrumb text-right">
                 <li class="active"><a href="#">Master Data</a></li>
-                <li class="active"><a href="#">Data Dokter</a></li>
+                <li class="active"><a href="#">Data Kas</a></li>
             </ol>
         </div>
     </div>
@@ -16,13 +16,15 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Data Dokter</strong>
+                            <strong class="card-title">Data Kas Apotek</strong>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('addDokter')}}">
+                            <a href="{{route('addKas')}}">
                                 <button class="btn btn-primary" style="margin-bottom: 15px;">
                                     <i class="fa fa-plus"></i> Tambah
                                 </button>
+                                <p style="font-weight: bold; font-size: 20px; margin-left: 80%">Jumlah Kas Apotek {{' Rp.'.number_format($sum,2)}}</p>
+                                <br>
                             </a>
                             @if (session('alert'))
                                 <div class="alert alert-danger">
@@ -40,26 +42,24 @@
                             <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Kode</th>
-                                    <th>Nama</th>
-                                    <th>Alamat</th>
-                                    <th>Telepon</th>
+                                    <th>Tanggal</th>
+                                    <th>Keterangan</th>
+                                    <th>Total Nominal</th>
                                     <th>Aksi</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($dokter as $dokters)
+                                @foreach($kas as $kass)
                                     <tr>
-                                        <td>{{$dokters->kode_dokter}}</td>
-                                        <td>{{$dokters->nama_dokter}}</td>
-                                        <td>{{$dokters->alamat}}</td>
-                                        <td>{{$dokters->telepon}}</td>
+                                        <td>{{$kass->tanggal}}</td>
+                                        <td>{{$kass->keterangan}}</td>
+                                        <td>{{' Rp.'.number_format($kass->nominal,2)}}</td>
                                         <td>
-                                            <a href="{{route('deleteDokter',$dokters->id)}}}">
+                                            <a href="{{route('deleteKas',$kass->id)}}}">
                                                 <button class="btn btn-danger" style="width: 40px;"><i class="fa fa-trash"></i>
                                                 </button>
                                             </a>
-                                            <a href="{{route('editDokter',$dokters->id)}}">
+                                            <a href="{{route('editKas',$kass->id)}}">
                                                 <button class="btn btn-primary" style="width: 40px;"><i class="fa fa-pencil"></i>
                                                 </button>
                                             </a>
