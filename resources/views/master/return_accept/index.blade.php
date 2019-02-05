@@ -45,6 +45,7 @@
                                 <th>Nama Distributor</th>
                                 <th>Kuantitas</th>
                                 <th>Tgl Return</th>
+                                <th>Tgl Penerimaan</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
@@ -55,12 +56,8 @@
                                     <td>{{ $return_accept->nama_distributor }}</td>
                                     <td>{{ $return_accept->qty }}</td>
                                     <td>{{ $return_accept->tanggal_penerimaan }}</td>
+                                    <td>{{ $return_accept->tanggal_return }}</td>
                                     <td>
-                                        <a href="{{ route('edit-accept-return', $return_accept->id) }}">
-                                            <button type="button" class="btn btn-primary">
-                                                <span class="fa fa-pencil"></span>
-                                            </button>
-                                        </a>
                                         <a href="{{ route('delete-accept-return', $return_accept->id) }}">
                                             <button type="button" class="btn btn-danger">
                                                 <span class="fa fa-trash"></span>

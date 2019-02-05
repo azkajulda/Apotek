@@ -39,7 +39,7 @@
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kode Obat</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="text" id="text-input" name="medicine_code" placeholder="" class="form-control"><small class="form-text text-muted">*Contoh : O102</small>
+                                        <input type="text" id="text-input" name="medicine_code" onmouseover="this.focus();" placeholder="" class="form-control"><small class="form-text text-muted">*Contoh : O102</small>
                                         @if ($errors->has('medicine_code'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('medicine_code') }}</p>
                                         @endif

@@ -121,4 +121,11 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/edit/{id}', 'KasController@get_data_kas')->name('editKas');
         Route::post('/update/{id}', 'KasController@updateKas')->name('updateKas');
     });
+
+    Route::group(['prefix' => 'report'],function (){
+        Route::group(['prefix' => 'pembelian'],function () {
+            Route::get('/', 'ReportController@reportPembelian')->name('reportPembelian');
+            Route::get('/select', 'ReportController@selectPembelian')->name('selectPembelian');
+        });
+    });
 });

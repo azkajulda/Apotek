@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\distributor;
 use App\obat;
 use App\penerimaan_return;
+use App\return_pembelian;
+use DB;
 
 class AcceptReturnController extends Controller
 {
     public $view = [
         "index" => "master.return_accept.index",
         "add" => "master.return_accept.add",
-        "edit" => "master.return_accept.edit",
     ];
     /**
      * Display a listing of the resource.
@@ -26,8 +27,13 @@ class AcceptReturnController extends Controller
         $return_accepts = $return_accept->select(
             "penerimaan_returns.*", 
             "obats.nama_obat", 
-            "distributors.nama_distributor"
-        )->join("obats", "penerimaan_returns.id_obat", "obats.id")->join("distributors", "penerimaan_returns.id_distributor", "distributors.id")->get();
+            "distributors.nama_distributor",
+            "return_pembelians.tanggal_return"
+        )
+        ->join("obats", "penerimaan_returns.id_obat", "obats.id")
+        ->join("distributors", "penerimaan_returns.id_distributor", "distributors.id")
+        ->join("return_pembelians", "penerimaan_returns.id_return", "return_pembelians.id")
+        ->get();
         $data["return_accepts"] = $return_accepts;
         return view($this->view["index"], $data);
     }
@@ -42,8 +48,10 @@ class AcceptReturnController extends Controller
         //
         $medicine = obat::all();
         $distributor = distributor::all();
+        $return_purchase = return_pembelian::where("returned", '=', false)->get();
         $data["medicines"] = $medicine;
         $data["distributors"] = $distributor;
+        $data["return_purchases"] = $return_purchase;
         return view($this->view["add"], $data);
     }
 
@@ -59,6 +67,7 @@ class AcceptReturnController extends Controller
         $validator = $request->validate([
             "accept_return_medicine" => "required",
             "accept_return_distributor" => "required",
+            "accept_return_purchases" => "required",
             "accept_return_qty" => "required",
             "accept_return_date" => "required",
             "accept_return_caption" => "required",
@@ -72,6 +81,7 @@ class AcceptReturnController extends Controller
                 $accept_return = new penerimaan_return;
                 $accept_return->id_obat = $request->accept_return_medicine;
                 $accept_return->id_distributor = $request->accept_return_distributor;
+                $accept_return->id_return = $request->accept_return_purchases;
                 $accept_return->qty = $request->accept_return_qty;
                 $accept_return->tanggal_penerimaan = $request->accept_return_date;
                 $accept_return->keterangan = $request->accept_return_caption;
@@ -80,14 +90,19 @@ class AcceptReturnController extends Controller
                 $selected_medicine->stok = $stock;
                 $selected_medicine->save();
 
+                $return_purchase = return_pembelian::findOrFail($request->accept_return_purchases);
+                $return_purchase->returned = true;
+                $return_purchase->save();
+
             } catch (\Exception $e) {
+                dd($e->getMessage());
                 DB::rollBack();
-                return redirect()->route('purchase-return')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
+                return redirect()->route('accept-return')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
             }
             DB::commit();
-            return redirect()->route('purchase-return')->with('success', 'Data Telah Masuk');
+            return redirect()->route('accept-return')->with('success', 'Data Telah Masuk');
         } catch (\Exception $e) {
-            return redirect()->route('purchase-return')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
+            return redirect()->route('accept-return')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
     }
 
@@ -134,5 +149,12 @@ class AcceptReturnController extends Controller
     public function destroy($id)
     {
         //
+        try {
+            $accept_return = penerimaan_return::findOrFail($id);
+            $accept_return->delete();
+            return redirect()->route('accept-return')->with('delete', 'Data Return Penerimaan pada tanggal '.$accept_return->tanggal_penerimaan.' berhasil dihapus.');
+        } catch (\Exception $e) {
+            return redirect()->route('accept-return')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
+        }
     }
 }

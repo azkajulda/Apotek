@@ -64,18 +64,17 @@
 
                 <h3 class="menu-title">Transaksi</h3>
                 <li><a href="{{ route('purchase') }}"> <i class="menu-icon fa fa-tasks"></i>Pembelian Obat</a></li>
-                <li><a href="{{ route("sell") }}"> <i class="menu-icon fa fa-tasks"></i>Jual Obat</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Return Pembelian Obat</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Terima Return Obat</a></li>
+                <li><a href="{{ route("sell") }}"> <i class="menu-icon fa fa-tasks"></i>Penjualan Obat</a></li>
+                <li><a href="{{ route("purchase-return") }}"> <i class="menu-icon fa fa-tasks"></i>Return Pembelian Obat</a></li>
+                <li><a href="{{ route("accept-return") }}"> <i class="menu-icon fa fa-tasks"></i>Terima Return Obat</a></li>
 
                 <h3 class="menu-title">Report</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Report Pembelian</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Laporan Pembelian</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Laporan Penjualan</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Laporan Kas</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Laporan Kas</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="{{route('selectPembelian')}}">Laporan Pembelian</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="page-register.html">Laporan Penjualan</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="pages-forget.html">Laporan Kas</a></li>
                     </ul>
                 </li>
 
@@ -146,7 +145,7 @@
 
 <!-- Right Panel -->
 
-<script src="{{asset('/vendors/jquery/dist/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/vendors/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{asset('/vendors/popper.js/dist/umd/popper.min.js')}}"></script>
 <script src="{{asset('/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('/assets/js/main.js')}}"></script>
@@ -188,7 +187,23 @@
         });
     })(jQuery);
 </script>
-
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        if ($("#accept_return_purchases").length) {
+            var data = '<?php if (!empty($return_purchases)) { echo $return_purchases; }else{ echo "";} ?>'
+            var object = JSON.parse(data)
+            $("#accept_return_purchases").change(function(){
+                var value = this.value
+                var selected = $.grep(object, function (v) {
+                    return v.id == value
+                })
+                console.log(selected[0])
+                var qty = selected[0].qty
+                $("#accept_return_qty").val(qty)
+            })
+        }
+    })
+</script>
 </body>
 
 </html>

@@ -189,7 +189,7 @@ class PurchaseReturnController extends Controller
         try {
             $purchase_return = return_pembelian::findOrFail($id);
             $purchase_return->delete();
-            return redirect()->route('purchase-return')->with('delete', 'Data Penjualan pada tanggal '.$purchase_return->tanggal_return.' berhasil dihapus.');
+            return redirect()->route('purchase-return')->with('delete', 'Data Return Pembelian pada tanggal '.$purchase_return->tanggal_return.' berhasil dihapus.');
         } catch (\Exception $e) {
             return redirect()->route('purchase-return')->with('alert', "Maaf terjadi kesalahan di server, mohon coba sesaat lagi.");
         }
