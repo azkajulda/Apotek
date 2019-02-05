@@ -95,6 +95,24 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/delete/{id}', "SellController@destroy")->name('delete-sell');
     });
 
+    Route::group(['prefix' => 'return/purchase'], function () {
+        Route::get('/', "PurchaseReturnController@index")->name('purchase-return');
+        Route::get('/add', "PurchaseReturnController@create")->name('add-purchase-return');
+        Route::post('/add', "PurchaseReturnController@store")->name('store-purchase-return');
+        Route::get('/edit/{id}', "PurchaseReturnController@edit")->name('edit-purchase-return');
+        Route::post('/update/{id}', "PurchaseReturnController@update")->name('update-purchase-return');
+        Route::get('/delete/{id}', "PurchaseReturnController@destroy")->name('delete-purchase-return');
+    });
+
+    Route::group(['prefix' => 'return/accept'], function () {
+        Route::get('/', "AcceptReturnController@index")->name('accept-return');
+        Route::get('/add', "AcceptReturnController@create")->name('add-accept-return');
+        Route::post('/add', "AcceptReturnController@store")->name('store-accept-return');
+        Route::get('/edit/{id}', "AcceptReturnController@edit")->name('edit-accept-return');
+        Route::post('/update/{id}', "AcceptReturnController@update")->name('update-accept-return');
+        Route::get('/delete/{id}', "AcceptReturnController@destroy")->name('delete-accept-return');
+    });
+
     Route::group(['prefix' => 'kas'], function () {
         Route::get('/', 'KasController@kas')->name('kas');
         Route::get('/add', 'KasController@addKas')->name('addKas');
