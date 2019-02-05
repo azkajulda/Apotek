@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Laporan Pembelian</title>
+    <title>Report Uang Kas</title>
     <style media="screen">
         body {
             font-family: 'Segoe UI','Microsoft Sans Serif',sans-serif;
@@ -177,7 +177,7 @@
     <div class="invoiceNbr">
         REPORT
         <br />
-        PEMBELIAN
+        KAS APOTEK
         <br />
         <button onclick="print()" class="btn btn-primary btn-sm" style="margin-top: 10px">
             <i class="fa fa-print"></i> Cetak
@@ -211,41 +211,24 @@
             Tanggal
         </div>
         <div class="col-1-10 panel">
-            Nama Obat
+            Keterangan
         </div>
         <div class="col-1-10 panel">
-            Nama Distributor
-        </div>
-        <div class="col-1-10 panel">
-            Harga Obat
-        </div>
-        <div class="col-1-10 panel">
-            Qty
-        </div>
-        <div class="col-1-10 panel">
-            Total
+            Nominal
         </div>
     </div>
 
     @foreach($data as $datas)
     <div class="row">
         <div class="col-1-10">
-            {{date('d-M-Y', strtotime($datas->tanggal_pembelian))}}
-        </div>
-        <div class="col-1-52">
-            {{$datas->nama_obat}}
-        </div>
-        <div class="col-1-52">
-            {{$datas->nama_distributor}}
+            {{date('d-M-Y', strtotime($datas->tanggal))}}
         </div>
         <div class="col-1-10">
-            {{' Rp.'.number_format($datas->harga_beli,2)}}
+            {{$datas->keterangan}}
         </div>
+
         <div class="col-1-10">
-            {{$datas->qty}}
-        </div>
-        <div class="col-1-10">
-            {{' Rp.'.number_format(($datas->harga_beli)*($datas->qty),2)}}
+            {{' Rp.'.number_format($datas->nominal,2)}}
         </div>
     </div>
     @endforeach
@@ -254,18 +237,10 @@
         <div class="col-1-10">
 
         </div>
-        <div class="col-1-52">
-
-        </div>
         <div class="col-1-10">
+            Jumlah Uang Kas :
+        </div>
 
-        </div>
-        <div class="col-1-10">
-            Jumlah Total:
-        </div>
-        <div class="col-1-10">
-
-        </div>
         <div class="col-1-10">
             {{' Rp.'.number_format($jumlah,2)}}
 

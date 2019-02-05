@@ -73,8 +73,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Report Pembelian</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-print"></i><a href="{{route('selectPembelian')}}">Laporan Pembelian</a></li>
-                        <li><i class="menu-icon fa fa-print"></i><a href="page-register.html">Laporan Penjualan</a></li>
-                        <li><i class="menu-icon fa fa-print"></i><a href="pages-forget.html">Laporan Kas</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="{{route('selectPenjualan')}}">Laporan Penjualan</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="{{route('selectKas')}}">Laporan Kas</a></li>
                     </ul>
                 </li>
 

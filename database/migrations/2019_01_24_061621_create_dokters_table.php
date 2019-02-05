@@ -16,7 +16,7 @@ class CreateDoktersTable extends Migration
         Schema::create('dokters', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kode_dokter')->unique();
-            $table->string('nama_dokter');
+            $table->string('nama_dokter')->nullable();
             $table->string('alamat');
             $table->string('telepon');
             $table->timestamps();

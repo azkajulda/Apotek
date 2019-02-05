@@ -109,5 +109,15 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/', 'ReportController@reportPembelian')->name('reportPembelian');
             Route::get('/select', 'ReportController@selectPembelian')->name('selectPembelian');
         });
+
+        Route::group(['prefix' => 'penjualan'],function () {
+            Route::get('/', 'ReportController@reportPenjualan')->name('reportPenjualan');
+            Route::get('/select', 'ReportController@selectPenjualan')->name('selectPenjualan');
+        });
+
+        Route::group(['prefix' => 'kas'],function () {
+            Route::get('/', 'ReportController@reportKas')->name('reportKas');
+            Route::get('/select', 'ReportController@selectKas')->name('selectKas');
+        });
     });
 });

@@ -22,6 +22,7 @@ class CreateReturnPembeliansTable extends Migration
             $table->integer('qty');
             $table->date('tanggal_return');
             $table->string('keterangan');
+            $table->tinyInteger('returned')->default(0);
             $table->timestamps();
         });
     }
