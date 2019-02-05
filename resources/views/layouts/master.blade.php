@@ -190,17 +190,25 @@
 <script type="text/javascript">
     jQuery(document).ready(function($){
         if ($("#accept_return_purchases").length) {
-            var data = '<?php if (!empty($return_purchases)) { echo $return_purchases; }else{ echo "";} ?>'
+            var php_data = '<?php if (!empty($return_purchases)) { echo $return_purchases; }else{ echo "";} ?>'
+            var data = escapeNewLineChars(php_data)
             var object = JSON.parse(data)
             $("#accept_return_purchases").change(function(){
                 var value = this.value
                 var selected = $.grep(object, function (v) {
                     return v.id == value
                 })
-                console.log(selected[0])
                 var qty = selected[0].qty
                 $("#accept_return_qty").val(qty)
             })
+        }
+
+        function escapeNewLineChars(valueToEscape) {
+            if (valueToEscape != null && valueToEscape != "") {
+                return valueToEscape.replace(/\r\n/g, " ");
+            } else {
+                return valueToEscape;
+            } 
         }
     })
 </script>
