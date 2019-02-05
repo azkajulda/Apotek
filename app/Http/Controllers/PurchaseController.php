@@ -142,14 +142,17 @@ class PurchaseController extends Controller
         ]);
         try {
             $selected_medicine = obat::findOrFail($request->input("purchase_medicine"));
+            $purchase = pembelian::findOrFail($id);
             $medicine_price = $selected_medicine->harga_beli;
             $price = $request->purchase_qty * $medicine_price;
-
+            $stock = $medicine_stock + 0;
             $medicine_stock = $selected_medicine->stok;
-            $stock = $medicine_stock + $request->input("purchase_qty");
+            if ($request->purchase_qty < $purchase->qty || $request->purchase_qty > $purchase->qty) {
+                $medicine_stock = $selected_medicine->stok - $sales->qty;
+                $stock = $medicine_stock + $request->input("purchase_qty");
+            }
             DB::beginTransaction();
             try {
-                $purchase = pembelian::findOrFail($id);
                 $purchase->id_obat = $request->purchase_medicine;
                 $purchase->id_distributor = $request->purchase_distributor;
                 $purchase->tanggal_pembelian = $request->purchase_date;

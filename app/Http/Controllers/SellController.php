@@ -153,17 +153,20 @@ class SellController extends Controller
         ]);
         try {
             $selected_medicine = obat::findOrFail($request->sales_medicine);
+            $sales = penjualan::findOrFail($id);
             $medicine_price = $selected_medicine->harga_jual;
             $price = $request->sales_qty * $medicine_price;
-
+            $stock = $medicine_stock - 0;
             $medicine_stock = $selected_medicine->stok;
-            if ($request->sales_qty > $medicine_stock ||  $medicine_stock < 0) {
-                return redirect()->route('sell')->with('delete', 'Maaf, stok obat kurang dari yang dibutuhkan, mohon melakukan pembelian obat.');
+            if ($request->sales_qty < $sales->qty || $request->sales_qty > $sales->qty) {
+                $medicine_stock = $selected_medicine->stok + $sales->qty;
+                if ($request->sales_qty > $medicine_stock ||  $medicine_stock < 0) {
+                    return redirect()->route('sell')->with('delete', 'Maaf, stok obat kurang dari yang dibutuhkan, mohon melakukan pembelian obat.');
+                }
+                $stock = $medicine_stock - $request->sales_qty;
             }
-            $stock = $medicine_stock - $request->sales_qty;
             DB::beginTransaction();
             try {
-                $sales = penjualan::findOrFail($id);
                 $sales->id_obat = $request->sales_medicine;
                 $sales->id_konsumen = $request->sales_consument;
                 $sales->id_dokter = $request->sales_doctor;
