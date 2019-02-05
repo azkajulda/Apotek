@@ -37,7 +37,7 @@
                                     {{ session('delete') }}
                                 </div>
                             @endif
-                            <table id="" class="table table-striped table-bordered">
+                            <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                 <thead>
                                 <tr>
                                     <th>Kode</th>

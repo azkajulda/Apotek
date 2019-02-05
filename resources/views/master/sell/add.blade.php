@@ -5,8 +5,8 @@
             <ol class="breadcrumb text-right">
                 <li class="active"><a href="#">Master Data</a></li>
                 <li class="active"><a href="#">Data Apotek</a></li>
-                <li class="active"><a href="#">Data Pembelian</a></li>
-                <li class="active">Tambah Pembelian</li>
+                <li class="active"><a href="#">Data Penjualan</a></li>
+                <li class="active">Tambah Penjualan</li>
             </ol>
         </div>
     </div>
@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong>Tambah</strong> Data Pembelian
+                            <strong>Tambah</strong> Data Penjualan
                         </div>
                         <div class="card-body card-block">
                             @if (session('alert'))
@@ -91,6 +91,8 @@
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kuantitas</label></div>
                                     <div class="col-12 col-md-3">
                                         <input type="number" id="text-input" name="sales_qty" placeholder="" class="form-control">
+
+                                        <input name="documentID" onmouseover="this.focus();" type="text">
                                         @if ($errors->has('sales_qty'))
                                             <p style="color:#dc3545;font-size:15px;">{{ $errors->first('sales_qty') }}</p>
                                         @endif

@@ -17,7 +17,7 @@ class CreateKasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('id_pembelian')->nullable();
             $table->foreign('id_pembelian')->references('id')->on('pembelians')->onDelete('cascade');
-            $table->unsignedInteger('id_penjualan');
+            $table->unsignedInteger('id_penjualan')->nullable();
             $table->foreign('id_penjualan')->references('id')->on('penjualans')->onDelete('cascade');
             $table->date('tanggal');
             $table->string('keterangan');

@@ -19,8 +19,11 @@ class CreatePenerimaanReturnsTable extends Migration
             $table->foreign('id_obat')->references('id')->on('obats')->onDelete('cascade');
             $table->unsignedInteger('id_distributor');
             $table->foreign('id_distributor')->references('id')->on('distributors')->onDelete('cascade');
+            $table->unsignedInteger('id_return');
+            $table->foreign('id_return')->references('id')->on('return_pembelians')->onDelete('cascade');
             $table->date('tanggal_penerimaan');
             $table->integer('qty');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

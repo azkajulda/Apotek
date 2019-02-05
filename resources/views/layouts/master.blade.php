@@ -64,18 +64,17 @@
 
                 <h3 class="menu-title">Transaksi</h3>
                 <li><a href="{{ route('purchase') }}"> <i class="menu-icon fa fa-tasks"></i>Pembelian Obat</a></li>
-                <li><a href="{{ route("sell") }}"> <i class="menu-icon fa fa-tasks"></i>Jual Obat</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Return Pembelian Obat</a></li>
-                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Terima Return Obat</a></li>
+                <li><a href="{{ route("sell") }}"> <i class="menu-icon fa fa-tasks"></i>Penjualan Obat</a></li>
+                <li><a href="#"> <i class="menu-icon fa fa-tasks"></i>Return Pembelian Obat</a></li>
+                <li><a href="#"> <i class="menu-icon fa fa-tasks"></i>Terima Return Obat</a></li>
 
                 <h3 class="menu-title">Report</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Report Pembelian</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Laporan Pembelian</a></li>
-                        <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Laporan Penjualan</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Laporan Kas</a></li>
-                        <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Laporan Kas</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="{{route('selectPembelian')}}">Laporan Pembelian</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="page-register.html">Laporan Penjualan</a></li>
+                        <li><i class="menu-icon fa fa-print"></i><a href="pages-forget.html">Laporan Kas</a></li>
                     </ul>
                 </li>
 
