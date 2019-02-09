@@ -14,103 +14,96 @@
 @section('content')
     <div class="content mt-3">
         <div class="animated fadeIn">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong>Tambah</strong> Data Penjualan
-                        </div>
-                        <div class="card-body card-block">
-                            @if (session('alert'))
-                                <div class="alert alert-danger">
-                                    {{ session('alert') }}
-                                </div>
-                            @elseif(session('success'))
-                                <div class="alert alert-success">
-                                    {{ session('success') }}
-                                </div>
-                            @elseif(session('delete'))
-                                <div class="alert alert-warning">
-                                    {{ session('delete') }}
-                                </div>
-                            @endif
-                            <form action="{{ route('store-sell') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
-                                @csrf
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Nama Obat</label></div>
-                                    <div class="col-12 col-md-9">
-                                        <select name="sales_medicine" id="sales_medicine" class="form-control">
-                                            <option value="">&mdash;Pilih Obat&mdash;</option>
-                                            @foreach ($medicines as $medicine)
-                                                <option value="{{ $medicine->id }}">{{ $medicine->nama_obat }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('sales_medicine'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('sales_medicine') }}</p>
-                                        @endif
+            <div class="row" style="padding-left: 10px">
+                <div class="col-lg-12 row">
+                    <div class="col col-md-4" style="padding: 5px">
+                        <div class="card" style="padding: 10px">
+                            <form action="{{ route('store-accept-return') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Kode Barang</span>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                                     </div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Konsumen</label></div>
-                                    <div class="col-12 col-md-9">
-                                        <select name="sales_consument" id="sales_consument" class="form-control">
-                                            <option value="">&mdash;Pilih Konsumen&mdash;</option>
-                                            @foreach ($consumens as $consumen)
-                                                <option value="{{ $consumen->id }}">{{ $consumen->nama_konsumen }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('sales_consument'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('sales_consument') }}</p>
-                                        @endif
+                                    <div class="col-12 col-md-12">
+                                        <input type="number" id="text-input" name="sales_qty" class="form-control">
                                     </div>
                                 </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Dokter</label></div>
-                                    <div class="col-12 col-md-9">
-                                        <select name="sales_doctor" id="sales_doctor" class="form-control">
-                                            <option value="">&mdash;Pilih Dokter&mdash;</option>
-                                            @foreach ($doctors as $doctor)
-                                                <option value="{{ $doctor->id }}">{{ $doctor->nama_dokter }}</option>
-                                            @endforeach
-                                        </select>
-                                        @if ($errors->has('sales_doctor'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('sales_doctor') }}</p>
-                                        @endif
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-outline-secondary" disabled type="button">Harga Satuan</button>
+                                    </div>
+                                    <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <select name="sales_medicine" id="sales_medicine" class="form-control" aria-describedby="basic-addon1">
+                                        <option value="">&mdash;Pilih Konsumen&mdash;</option>
+                                        @foreach ($consumens as $consumen)
+                                            <option value="{{ $consumen->id }}">{{ $consumen->nama_konsumen }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-primary" disabled type="button"><i class="fa fa-plus"></i></button>
                                     </div>
                                 </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tgl Penjualan</label></div>
-                                    <div class="col-12 col-md-3">
-                                        <input type="date" id="text-input" name="sales_date" placeholder="" class="form-control">
-                                        @if ($errors->has('sales_date'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('sales_date') }}</p>
-                                        @endif
+                                <div class="input-group mb-3">
+                                    <select name="sales_medicine" id="sales_medicine" class="form-control" aria-describedby="basic-addon1">
+                                        <option value="">&mdash;Pilih Dokter&mdash;</option>
+                                        @foreach ($doctors as $doctor)
+                                            <option value="{{ $doctor->id }}">{{ $doctor->nama_dokter }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-primary" disabled type="button"><i class="fa fa-plus"></i></button>
                                     </div>
                                 </div>
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Kuantitas</label></div>
-                                    <div class="col-12 col-md-3">
-                                        <input type="number" id="text-input" name="sales_qty" placeholder="" class="form-control">
-
-                                        <input name="documentID" onmouseover="this.focus();" type="text">
-                                        @if ($errors->has('sales_qty'))
-                                            <p style="color:#dc3545;font-size:15px;">{{ $errors->first('sales_qty') }}</p>
-                                        @endif
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"><i class="fa fa-plus"></i></span>
+                                    </div>
+                                    <input type="number" class="form-control" value="1" aria-label="Username" aria-describedby="basic-addon1">
+                                    <div class="input-group-prepend">
+                                        <button class="btn btn-warning" disabled type="button">Tambah</button>
                                     </div>
                                 </div>
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary btn-sm">
-                                        <i class="fa fa-dot-circle-o"></i> Submit
-                                    </button>
-                                    <button type="reset" value="reset" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-ban"></i> Reset
-                                    </button>
-                                </div>
+                                <button class="btn btn-primary col col-md-12" type="submit"><i class="fa fa-print"></i> SELESAI</button>
                             </form>
+                        </div>
+                    </div>
+                    <div class="col col-md-8" style="padding: 5px">
+                        <div class="card col col-md-12">
+                            <div class="row form-group" style="padding-top: 20px">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">TOTAL</label></div>
+                                <div class="col col-md-12">
+                                    <input type="number" id="text-input" name="sales_qty" placeholder="" class="form-control" value="10000">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card col col-md-12">
+                            <div style="padding: 10px;">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                    <tr style="font-size: 11px">
+                                        <th>Nama Obat</th>
+                                        <th>Tgl Kadaluarsa</th>
+                                        <th>Harga Obat</th>
+                                        <th>Kuantitas</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><!-- .animated -->
-    </div><!-- .content -->
+        </div>
+    </div>
 @endsection
