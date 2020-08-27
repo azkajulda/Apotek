@@ -1,2 +1,2 @@
 # Apotek
-Semangat 45
+Aplikasi website kasir apotek
